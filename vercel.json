@@ -1,8 +1,8 @@
 {
-  "version": 2,
-  "builds": [{ "src": "app.py", "use": "@vercel/python" }],
-  "routes": [{ "src": "/(.*)", "dest": "/app.py" }],
+  "version": 1,
+  "builds": [{ "src": "main", "use": "@vercel/python" }],
+  "routes": [{ "src": "/(.*)", "dest": "/main.py" }],
   "env": {
-    "APP_MODULE": "app:app"
+    "APP_MODULE": "main:app"
   }
 }
