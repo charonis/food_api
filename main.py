@@ -17,7 +17,10 @@ def params_list(header: str = "chicken_breast"):
 def params_food(header: str = "52772"):
     return {"header": header}
 
-
+@app.get("/")
+async def aa():
+    a = str("hello world")
+    return a
 
 
 @app.get("/foodList", response_model=list[ListFood])
@@ -42,4 +45,6 @@ async def get_food_main(params_food: dict = Depends(params_food)):
 
 
 if __name__ == "__main__":
-    uvicorn.run("main:app", port = "0.0.0.0" , port=8000, reload=True)
+    uvicorn.run("main:app", host = "0.0.0.0" , port=8000, reload=True)
+    # uvicorn.run("main:app", port=8080, reload=True)
+    
