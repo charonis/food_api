@@ -2,6 +2,7 @@ from  fastapi import FastAPI, Depends
 from http_client import GETListsFood, GetFood
 from model import ListFood, FoodMain
 from myFilter import MyFilter
+import uvicorn
 
 
 app = FastAPI(
@@ -39,3 +40,6 @@ async def get_food_main(params_food: dict = Depends(params_food)):
     return myFilter.myFilter()
 
 
+
+if __name__ == "__main__":
+    uvicorn.run("app:app", port=8080, port = "0.0.0.0" , reload=True)
