@@ -42,4 +42,4 @@ async def get_food_main(params_food: dict = Depends(params_food)):
 
 
 if __name__ == "__main__":
-    uvicorn.run("app:app", port=8080, port = "0.0.0.0" , reload=True)
+    uvicorn.run("main:app", port = "0.0.0.0" , port=8000, reload=True)
