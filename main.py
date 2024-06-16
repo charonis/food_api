@@ -17,7 +17,10 @@ def params_list(header: str = "chicken_breast"):
 def params_food(header: str = "52772"):
     return {"header": header}
 
-
+@app.get("/")
+async def aa():
+        
+    return await {"hello world"}
 
 
 @app.get("/foodList", response_model=list[ListFood])
