@@ -1,5 +1,4 @@
 from aiohttp import ClientSession
-from conig import settings
 
         
 class GETListsFood:
@@ -9,7 +8,7 @@ class GETListsFood:
         
     async def getList(self):
         async with ClientSession() as session:
-            async with session.get(f"{settings.URL_MAIN_COMPONENT}i={self.header}") as response:
+            async with session.get(f"https://www.themealdb.com/api/json/v1/1/filter.php?i={self.header}") as response:
                 result =  await response.json()
                 return result["meals"]
             
@@ -23,7 +22,7 @@ class GetFood:
         
     async def getFood(self):
         async with ClientSession() as session:
-           async with session.get(f"{settings.URL_MAIN_FOOD}i={self.header}") as response:
+           async with session.get(f"https://www.themealdb.com/api/json/v1/1/lookup.php?i={self.header}") as response:
                 result = await response.json()
                 return result["meals"]
             
